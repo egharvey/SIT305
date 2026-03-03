@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">UnitConverter</string>
+    <string name="heading">Travel Buddy</string>
+    <string name="subheading">Unit Converter</string>
+    <string-array name="currencies">
+        <item>USD</item>
+        <item>EUR</item>
+        <item>JPY</item>
+        <item>GBP</item>
+        <item>AUD</item>
+    </string-array>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="buttonText">Convert</string>
+</resources>
