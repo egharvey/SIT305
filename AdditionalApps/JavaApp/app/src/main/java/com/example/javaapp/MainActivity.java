@@ -1,11 +1,7 @@
 package com.example.javaapp;
 
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
-
-import android.media.Image;
 import android.os.Bundle;
-import android.os.SystemClock;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -34,8 +30,20 @@ public class MainActivity extends AppCompatActivity {
         Button helloWorldButton = findViewById(R.id.helloWorldButton);
         ImageView goku = findViewById(R.id.goku);
         helloWorldButton.setOnClickListener(v ->{
-            Toast.makeText(this, "Clicked!!!", Toast.LENGTH_SHORT).show();
-            goku.setVisibility(VISIBLE);
+
+            //If the image is gone, make it visible and make a toast
+            if (goku.getVisibility() > 1){
+                /* Not yet fully sure how getVisibility works, it returns a number based on
+                visibility, but I cannot find the full list of numbers. What I do know is it:
+                - Returns 0 if visibility == GONE
+                - Returns 8 if visibility == VISIBLE
+                This is fine for now, but note to self, find the proper documentation! */
+                goku.setVisibility(View.VISIBLE);
+                Toast.makeText(this, "A wild Goku appeared!", Toast.LENGTH_SHORT).show();
+            } else { //If image visible, make it disappear with a custom toast
+                goku.setVisibility(View.GONE);
+                Toast.makeText(this, "Where did he go?!", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }
