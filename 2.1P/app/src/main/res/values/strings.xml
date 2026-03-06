@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UnitConverter</string>
+    <string name="app_name">Travel Buddy</string>
     <string name="heading">Travel Buddy</string>
     <string name="subheading">Unit Converter</string>
     <string-array name="currencies">
@@ -8,6 +8,19 @@
         <item>JPY</item>
         <item>GBP</item>
         <item>AUD</item>
+    </string-array>
+    <string-array name="temperatures">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+    <string-array name="distances">
+        <item>Kilometers</item>
+        <item>Nautical Miles</item>
+        <item>km/L</item>
+        <item>mpg</item>
+        <item>Liters</item>
+        <item>Gallons</item>
     </string-array>
     <string name="from">From</string>
     <string name="to">To</string>

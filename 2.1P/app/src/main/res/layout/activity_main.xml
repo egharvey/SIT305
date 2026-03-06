@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Spinner
-        android:id="@+id/currencyToSpinner"
-        android:layout_width="330dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/currency"
-        android:entries="@array/currencies"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCurrencyFrom" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -30,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.005" />
 
     <TextView
         android:id="@+id/textView"
@@ -44,59 +33,57 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/currencyFromSpinner"
-        android:layout_width="330dp"
+        android:layout_width="190dp"
         android:layout_height="48dp"
-        android:layout_marginTop="39dp"
         android:background="@color/currency"
         android:backgroundTint="@null"
         android:entries="@array/currencies"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.017" />
 
     <EditText
         android:id="@+id/editCurrencyFrom"
-        android:layout_width="330dp"
+        android:layout_width="210dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
         android:background="@color/currency"
         android:ems="10"
+        android:foregroundTintMode="add"
         android:hint="@string/from"
         android:inputType="numberDecimal"
+        android:textColorHint="@color/hintColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.017" />
+
+    <Spinner
+        android:id="@+id/currencyToSpinner"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:background="@color/currency"
+        android:entries="@array/currencies"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currencyFromSpinner"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/editCurrencyTo"
-        android:layout_width="330dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="22dp"
-        android:background="@color/currency"
-        android:ems="10"
-        android:hint="@string/to"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currencyToSpinner"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.00999999" />
 
     <Button
         android:id="@+id/currencySubmit"
-        android:layout_width="131dp"
-        android:layout_height="69dp"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/currency"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/buttonText"
@@ -104,9 +91,177 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editCurrencyTo"
-        app:layout_constraintVertical_bias="0.261" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editCurrencyTo"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:background="@color/currency"
+        android:ems="10"
+        android:hint="@string/to"
+        android:inputType="numberDecimal"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCurrencyFrom"
+        app:layout_constraintVertical_bias="0.00999999" />
+
+    <Spinner
+        android:id="@+id/tempFromSpinner"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:background="@color/temp"
+        android:backgroundTint="@null"
+        android:entries="@array/temperatures"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyToSpinner"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <EditText
+        android:id="@+id/editTempFrom"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:background="@color/temp"
+        android:ems="10"
+        android:hint="@string/from"
+        android:inputType="numberDecimal"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCurrencyTo"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <Spinner
+        android:id="@+id/tempToSpinner"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:background="@color/temp"
+        android:entries="@array/temperatures"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempFromSpinner"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <EditText
+        android:id="@+id/editTempTo"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:background="@color/temp"
+        android:ems="10"
+        android:hint="@string/to"
+        android:inputType="numberDecimal"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTempFrom"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <Button
+        android:id="@+id/tempSubmit"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/temp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/buttonText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTempTo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/fuelFromSpinner"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:background="@color/distance"
+        android:backgroundTint="@null"
+        android:entries="@array/distances"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempToSpinner"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <EditText
+        android:id="@+id/editFuelFrom"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:background="@color/distance"
+        android:ems="10"
+        android:hint="@string/from"
+        android:inputType="numberDecimal"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTempTo"
+        app:layout_constraintVertical_bias="0.359" />
+
+    <Spinner
+        android:id="@+id/fuelToSpinner"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:background="@color/distance"
+        android:entries="@array/distances"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fuelFromSpinner"
+        app:layout_constraintVertical_bias="0.029999971" />
+
+    <EditText
+        android:id="@+id/editFuelTo"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:background="@color/distance"
+        android:ems="10"
+        android:hint="@string/to"
+        android:inputType="numberDecimal"
+        android:textColorHint="@color/hintColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFuelFrom"
+        app:layout_constraintVertical_bias="0.029999971" />
+
+    <Button
+        android:id="@+id/fuelSubmit"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/distance"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/buttonText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFuelTo"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
