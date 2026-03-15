@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Quiz Time</string>
+    <string name="start">Start!</string>
+    <string name="preamble">Test your general knowledge and try to get a perfect score! \nJust enter your name and then answer 5 questions to prove yourself!</string>
+    <string name="name">Name</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="scoreHeader">Your Score:</string>
+    <string name="newQuiz">Take New Quiz</string>
+    <string name="finish">Finish</string>
+    <string name="submit">Submit</string>
+    <string name="next">Next Question</string>
+</resources>
