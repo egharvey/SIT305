@@ -8,5 +8,3 @@ These are a series of apps that I made either during workshops or in my own time
 * FragementsTesting was a way to introduce myself to fragments, I followed [this tutorial by CodeLabX](https://www.youtube.com/watch?v=m-PefJ2CcR8). I do not think it follows good practices, but it served well at introducing me to fragements.
 
 * BottomNavTest was based off of [this guide from Foxandroid](https://www.youtube.com/watch?v=jOFLmKMOcK0). It goes into a better way of navigating fragments via a bottom nav bar.
-
-* RoomTesting was me loosly following along with [this guide from GeeksforGeeks](https://www.geeksforgeeks.org/android/how-to-perform-crud-operations-in-room-database-in-android/)

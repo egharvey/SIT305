@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PersonalPlanner</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="categories">
+        <item>Work</item>
+        <item>Personal</item>
+        <item>Travel</item>
+        <item>Misc</item>
+    </string-array>
+    <string-array name="ampm">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
+</resources>

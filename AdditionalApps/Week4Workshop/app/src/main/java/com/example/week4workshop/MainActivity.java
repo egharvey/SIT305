@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
@@ -16,6 +17,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import org.w3c.dom.Text;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 
 public class MainActivity extends AppCompatActivity {
     //Items
@@ -57,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btnSaveFile = findViewById(R.id.btnSaveFile);
         btnLoadFile = findViewById(R.id.btnLoadFile);
 
-        //Restore if activity was recreates
+        //Restore if activity was recreates (see onSaveInstanceState at line 152)
         if (savedInstanceState != null){
             String restoredDraft = savedInstanceState.getString(STATE_DRAFT, "");
             String restoredStatus = savedInstanceState.getString(STATE_STATUS, "");
@@ -74,9 +81,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //SET BUTTON LISTENERS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        //SET BUTTON LISTENERS
+        btnSavePrefs.setOnClickListener(v-> saveUsingSharedPreferences());
+        btnLoadPrefs.setOnClickListener(v -> loadUsingSharedPreferences());
+        btnSaveFile.setOnClickListener(v-> saveNoteToInternalFile());
+        btnLoadFile.setOnClickListener(v-> loadNoteFromInternalFile());
     }
 
+    //SAVE TO PREFERENCES
     private void saveUsingSharedPreferences() {
         SharedPreferences preferences = getSharedPreferences(PREF_FILE_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -84,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
         editor.putBoolean(KEY_DARK_MODE, cbDarkMode.isChecked());
         editor.apply();
 
-        tvStatus.setText("Saved!");
-        Toast.makeText(this, "Saved!", Toast.LENGTH_SHORT).show();
+        tvStatus.setText("Saved SharedPreferences!");
+        Toast.makeText(this, "Preferences Saved!", Toast.LENGTH_SHORT).show();
     }
 
     private void loadUsingSharedPreferences() {
@@ -97,11 +109,49 @@ public class MainActivity extends AppCompatActivity {
 
         cbDarkMode.setChecked(savedDarkMode);
 
-        tvStatus.setText("Loaded!");
-        Toast.makeText(this, "Loaded!", Toast.LENGTH_SHORT).show();
+        tvStatus.setText("Loaded SharedPreferences!");
+        Toast.makeText(this, "Preferences Loaded!", Toast.LENGTH_SHORT).show();
     }
 
-    //SAVE TO FILE AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    //SAVE TO FILE
+    private void saveNoteToInternalFile() {
+        String noteText = etFileNote.getText().toString();
+        try {
+            OutputStreamWriter writer = new OutputStreamWriter(openFileOutput(NOTE_FILE_NAME, MODE_PRIVATE));
+            writer.write(noteText);
+            writer.close();
+            tvStatus.setText("Saved file!");
+            Toast.makeText(this, "File Saved!", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            tvStatus.setText("Error saving file: " + e.getMessage());
+            Toast.makeText(this, "File save failed :(", Toast.LENGTH_SHORT).show();
+        }
+    }
 
+    private void loadNoteFromInternalFile(){
+        StringBuilder fileContent = new StringBuilder();
+        try {
+            InputStreamReader inputStreamReader = new InputStreamReader(openFileInput(NOTE_FILE_NAME));
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+            String line;
+            while ((line = reader.readLine()) != null) {
+                fileContent.append(line).append("\n");
+            }
+            reader.close();
+            etFileNote.setText(fileContent.toString());
+            tvStatus.setText("Loaded file!");
+            Toast.makeText(this, "File Loaded!", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            tvStatus.setText("Error loading file: " + e.getMessage());
+            Toast.makeText(this, "File load failed :(", Toast.LENGTH_SHORT).show();
+        }
+    }
 
+    // Saving and Restoring Activity Instance
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(STATE_DRAFT, etDraft.getText().toString());
+        outState.putString(STATE_STATUS, tvStatus.getText().toString());
+    }
 }
