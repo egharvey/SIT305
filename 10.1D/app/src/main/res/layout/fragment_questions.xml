@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestionsFragment">
+
+    <TextView
+        android:id="@+id/tv_qNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="65dp"
+        android:paddingHorizontal="15dp"
+        android:textSize="27dp"
+        android:textStyle="bold"
+        android:text="Q?" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:paddingHorizontal="15dp"
+        android:text="Let's get you started!"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_answer1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="250dp"
+        android:text="Test Answer 1"
+        android:backgroundTint="@color/black"/>
+
+    <Button
+        android:id="@+id/btn_answer2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="350dp"
+        android:text="Test Answer 2"
+        android:backgroundTint="@color/black"/>
+
+    <Button
+        android:id="@+id/btn_answer3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="450dp"
+        android:text="Test Answer 3"
+        android:backgroundTint="@color/black"/>
+
+    <Button
+        android:id="@+id/btn_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HINT"
+        android:backgroundTint="@color/black"
+        android:layout_gravity="end"
+        android:layout_margin="45dp"/>
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="510dp"
+        android:text="Anaylsis"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"
+        android:visibility="gone"/>
+
+</FrameLayout>

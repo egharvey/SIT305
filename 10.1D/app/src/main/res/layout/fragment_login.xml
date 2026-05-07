@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="Learning by Loosing"
+        android:textColor="@color/black"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="Username"
+        android:inputType="text"
+        android:autofillHints="username" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="270dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:autofillHints="password" />
+
+    <Button
+        android:id="@+id/btn_logIn"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="350dp"
+        android:text="Log In"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/semiTransparent"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btn_signUp"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="420dp"
+        android:text="SignUp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/semiTransparent"
+        android:textColor="@color/black"/>
+</FrameLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TopicsFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="What do you want to learn?"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="50dp"
+        android:textSize="50sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/et_topic"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="110dp"
+        android:hint="Write a topic!"
+        android:inputType="text"
+        />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:text="+"
+        android:layout_gravity="end"
+        android:layout_marginRight="15dp"
+        android:backgroundTint="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:text=">"
+        android:padding="0dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

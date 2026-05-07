@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultsFragment">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:paddingHorizontal="15dp"
+        android:text="Your Results"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    
+    <TextView
+        android:id="@+id/tv_q1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="150dp"
+        android:text="Question 1"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_q2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="260dp"
+        android:text="Question 2"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_q3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="370dp"
+        android:text="Question 3"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_response"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="490dp"
+        android:text="Anaylsis"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_analyse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Analyse"
+        android:backgroundTint="@color/black"
+        android:layout_gravity="end"
+        android:layout_margin="45dp"/>
+
+    <Button
+        android:id="@+id/btn_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's shoot for more!"
+        android:backgroundTint="@color/black"
+        android:layout_gravity="end"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="650dp"/>
+
+</FrameLayout>
